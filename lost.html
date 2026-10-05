@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Lost Item</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>UofSC Lost & Found</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="lost.html">Report lost</a>
+            <a href="found.html">Report found</a>
+        </nav>
+    </header>
+
+    <main class="form-page">
+
+        <h2>Report a Lost Item</h2>
+
+        <p class="form-description">
+            Fill out the form below with information about your missing item.
+        </p>
+
+        <form>
+
+            <div class="form-group">
+                <label for="lost-name">Your Name</label>
+                <input type="text" id="lost-name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="lost-email">Email</label>
+                <input type="email" id="lost-email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="lost-item">Item Name</label>
+                <input type="text" id="lost-item" name="item" required>
+            </div>
+
+            <div class="form-group">
+                <label for="lost-category">Category</label>
+
+                <select id="lost-category" name="category">
+                    <option value="">Select a category</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="clothing">Clothing</option>
+                    <option value="keys">Keys</option>
+                    <option value="wallet">Wallet / ID</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="lost-location">Last Seen Location</label>
+                <input type="text" id="lost-location" name="location">
+            </div>
+
+            <div class="form-group">
+                <label for="lost-date">Date Lost</label>
+                <input type="date" id="lost-date" name="date">
+            </div>
+
+            <div class="form-group">
+                <label for="lost-description">Description</label>
+                <textarea id="lost-description" name="description" rows="5"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="lost-photo">Upload Photo</label>
+                <input type="file" id="lost-photo" name="photo">
+            </div>
+
+            <button type="submit">Submit lost item</button>
+
+        </form>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 UofSC Lost & Found</p>
+    </footer>
+
+</body>
+</html>
