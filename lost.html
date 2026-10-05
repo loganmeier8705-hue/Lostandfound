@@ -1,33 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Report Lost Item</title>
-    <link rel="stylesheet" href="styles.css">
+<!-- Author: Logan Meier -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Report lost | UofSC Lost &amp; Found</title>
+<link rel="stylesheet" href="styles.css">
+<style>.sample-note { font-size: 0.8rem; }</style>
 </head>
-
-<body>
-
-    <header>
-        <h1>UofSC Lost & Found</h1>
-
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="lost.html">Report lost</a>
-            <a href="found.html">Report found</a>
-        </nav>
-    </header>
-
-    <main class="form-page">
-
-        <h2>Report a Lost Item</h2>
-
-        <p class="form-description">
-            Fill out the form below with information about your missing item.
-        </p>
-
-        <form>
+<body><header class="site-header"><div class="header-inner"><a class="brand" href="index.html"><span>UofSC<span class="brand-sub">Lost &amp; Found</span></span></a><nav aria-label="Main navigation"><a  href="index.html">Home</a><a  href="items.html">Browse items</a><a  href="index.html#how-it-works">How it works</a></nav><div class="header-actions"><a class="btn-outline" href="found.html">Report found</a><a class="btn" href="lost.html">Report lost</a></div></div></header><main class="wrap page-main form-layout"><aside><h1 class="page-title">Report a<br>lost item.</h1><p class="intro">Describe your missing item. A clear description will make it easier to recognize</p></aside><div><form>
+<p class="sample-note">Note: This form doesn't actually save or send anything. I don't know how to do that yet. This is just a demo.</p>
 
             <div class="form-group">
                 <label for="lost-name">Your Name</label>
@@ -40,7 +22,7 @@
             </div>
 
             <div class="form-group">
-                <label for="lost-item">Item Name</label>
+                <label for="lost-item">Item Name/Brand/Model</label>
                 <input type="text" id="lost-item" name="item" required>
             </div>
 
@@ -68,24 +50,16 @@
             </div>
 
             <div class="form-group">
-                <label for="lost-description">Description</label>
-                <textarea id="lost-description" name="description" rows="5"></textarea>
+                <label for="lost-description">Tags for search purposes (separated by commas)</label>
+                <textarea id="lost-description" name="tags" rows="3" placeholder="Airpods, Airpods Pro 2, Apple, wireless, earbuds, wireless earbuds"></textarea>
             </div>
 
             <div class="form-group">
                 <label for="lost-photo">Upload Photo</label>
-                <input type="file" id="lost-photo" name="photo">
+                <input accept="image/*" type="file" id="lost-photo" name="photo">
             </div>
 
             <button type="submit">Submit lost item</button>
 
-        </form>
-
-    </main>
-
-    <footer>
-        <p>&copy; 2026 UofSC Lost & Found</p>
-    </footer>
-
-</body>
+        </form></div></main><footer><p>&copy; 2026 UofSC Lost &amp; Found <span>Logan Meier</span></p></footer></body>
 </html>
