@@ -1,0 +1,2 @@
+All pages use the same plain garnet image from Placehold.co:
+https://placehold.co/600x600/781936/781936/png?text=%20
