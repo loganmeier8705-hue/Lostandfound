@@ -1,240 +1,744 @@
-/* UofSC Lost & Found â€” Author: Logan Meier */
+/* Author: Logan Meier*/
+:root {
+    --cream: #f8f4ed;
+    --garnet: #781936;
+    --ink: #4b1127;
+    --muted: #786b6b;
+    --line: #e8dadc;
+    --gold: #ead293
+}
+
 * {
-    box-sizing: border-box;
+    box-sizing: border-box
+}
+
+html {
+    scroll-behavior: smooth
 }
 
 body {
     margin: 0;
-    background-color: #f6f3f3;
-    color: #292323;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 15px;
+    line-height: 1.6
 }
 
-header {
-    padding: 22px max(20px, calc((100% - 1050px) / 2));
-    background-color: #73000a;
+a {
+    color: inherit
+}
+
+img {
+    max-width: 100%;
+    display: block
+}
+
+h1,h2,h3,p {
+    margin-top: 0
+}
+
+h1,h2,h3 {
+    font-family: Georgia,'Times New Roman',serif;
+    font-weight: normal;
+    line-height: 1.08
+}
+
+h2 {
+    font-size: 40px;
+    margin-bottom: 18px
+}
+
+h3 {
+    font-size: 23px
+}
+
+.wrap,.header-inner,.how-inner {
+    max-width: 1160px;
+    margin: auto;
+    padding-left: 32px;
+    padding-right: 32px
+}
+
+.site-header {
+    border-bottom: 1px solid var(--line)
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    min-height: 94px
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    font-family: Georgia,serif;
+    font-size: 23px
+}
+
+.brand-mark {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    background: var(--garnet);
     color: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px #78193625
 }
 
-header h1 {
-    margin: 0 0 10px;
-    font-size: 28px;
+.brand-sub {
+    display: block;
+    font: 9px Arial,sans-serif;
+    letter-spacing: 2px;
+    margin-top: 3px
 }
 
 nav {
     display: flex;
-    flex-wrap: wrap;
-    gap: 12px 24px;
+    gap: 26px
 }
 
 nav a {
-    color: white;
     text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--muted)
 }
 
-nav a:hover {
-    text-decoration: underline;
+nav a:hover,nav a[aria-current] {
+    color: var(--garnet)
 }
 
-a {
-    color: #73000a;
+.header-actions,.hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap
 }
 
-main {
-    max-width: 1050px;
-    margin: 36px auto;
-    padding: 0 20px;
+.btn,.btn-outline {
+    display: inline-block;
+    border-radius: 999px;
+    padding: 12px 23px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    border: 1px solid var(--garnet);
+    font-family: Arial,sans-serif;
+    text-align: center;
+    cursor: pointer
 }
 
-h2 {
-    font-size: 30px;
-    line-height: 1.2;
+.btn {
+    background: var(--garnet);
+    color: white;
+    box-shadow: 0 5px 15px #78193620
 }
 
-h3 {
-    line-height: 1.3;
+.btn-outline {
+    background: transparent;
+    color: var(--garnet);
+    border-color: #78193640
+}
+
+.btn:hover {
+    background: #5f122a
+}
+
+.btn-outline:hover {
+    background: #78193608
+}
+
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible {
+    outline: 3px solid #b88636;
+    outline-offset: 4px
+}
+
+.eyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #9a2446;
+    margin-bottom: 18px
 }
 
 .hero {
-    padding: 42px 24px;
-    border: 1px solid #ddd2d2;
-    border-radius: 10px;
-    background-color: white;
-    text-align: center;
-}
-
-.hero h2 {
-    margin-top: 0;
-    color: #73000a;
-}
-
-.hero p {
-    max-width: 600px;
-    margin: 0 auto 24px;
-}
-
-.button-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 14px;
-}
-
-.button,
-button[type="submit"] {
-    display: inline-block;
-    padding: 11px 22px;
-    border: 2px solid #73000a;
-    border-radius: 5px;
-    background-color: #73000a;
-    color: white;
-    font: inherit;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.button:hover,
-button[type="submit"]:hover {
-    border-color: #520007;
-    background-color: #520007;
-}
-
-.info {
-    margin-top: 38px;
-}
-
-.info > h2 {
-    text-align: center;
-}
-
-.cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    gap: 60px;
+    padding-top: 72px;
+    padding-bottom: 86px
 }
 
-.card {
-    padding: 24px;
-    border: 1px solid #ddd2d2;
-    border-radius: 10px;
-    background-color: white;
+.hero h1 {
+    font-size: clamp(45px,5.7vw,76px);
+    letter-spacing: -3px;
+    margin-bottom: 30px
 }
 
-.card h3 {
-    margin-top: 0;
-    color: #73000a;
+.hero h1 em {
+    color: #a52b50;
+    font-weight: normal
 }
 
-.card p {
-    margin-bottom: 0;
+.intro {
+    color: var(--muted);
+    max-width: 480px;
+    margin-bottom: 28px
 }
 
-.form-page {
-    max-width: 800px;
+.popular {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 25px;
+    margin-bottom: 0
 }
 
-.form-page > h2 {
-    margin-bottom: 12px;
-    color: #73000a;
+.popular strong {
+    color: #9a2446;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    margin-right: 14px
 }
 
-.form-description {
-    margin-bottom: 24px;
+.hero-visual {
+    position: relative;
+    padding: 10px 18px 28px
+}
+
+.arch {
+    border: 22px solid var(--garnet);
+    border-bottom-width: 25px;
+    border-radius: 240px 240px 40px 40px;
+    transform: rotate(3deg);
+    overflow: hidden;
+    background: #e9dfcf;
+    box-shadow: 0 18px 28px #4b112710
+}
+
+.arch img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transform: rotate(-3deg) scale(1.1)
+}
+
+.hero-tag {
+    position: absolute;
+    left: -15px;
+    bottom: 0;
+    background: white;
+    border-radius: 16px;
+    padding: 18px 22px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    box-shadow: 0 10px 25px #4b112720;
+    font-family: Georgia,serif
+}
+
+.hero-tag>span {
+    background: #f1e0e5;
+    border-radius: 50%;
+    padding: 7px 13px
+}
+
+.hero-tag small {
+    display: block;
+    font: 11px Arial,sans-serif;
+    color: var(--muted);
+    margin-top: 5px
+}
+
+.recent {
+    padding-top: 55px;
+    padding-bottom: 70px;
+    border-top: 1px solid var(--line)
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center
+}
+
+.sample-note {
+    color: var(--muted)
+}
+
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px;
+    margin-top: 30px
+}
+
+.item-card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.image-link {
+    display: block;
+    position: relative
+}
+
+.image-link img {
+    width: 100%;
+    aspect-ratio: 1.4;
+    object-fit: cover
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--garnet);
+    color: white;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1.3px;
+    border-radius: 20px;
+    padding: 5px 12px
+}
+
+.card-copy {
+    padding: 23px
+}
+
+.card-copy .eyebrow {
+    font-size: 9px;
+    margin-bottom: 12px
+}
+
+.card-copy h3 {
+    margin-bottom: 12px
+}
+
+.card-copy h3 a {
+    text-decoration: none
+}
+
+.card-copy h3 a:hover {
+    text-decoration: underline
+}
+
+.card-copy>p:not(.eyebrow) {
+    color: var(--muted);
+    font-size: 13px;
+    min-height: 64px
+}
+
+.card-meta {
+    border-top: 1px solid var(--line);
+    padding-top: 15px;
+    font-size: 11px
+}
+
+.card-meta small {
+    display: block;
+    color: var(--muted);
+    margin-top: 3px
+}
+
+.how {
+    background: #5c122b;
+    color: white;
+    padding: 65px 0
+}
+
+.how-inner {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 30px
+}
+
+.how .eyebrow {
+    color: var(--gold)
+}
+
+.how h2 {
+    font-size: 39px
+}
+
+.gold {
+    background: var(--gold);
+    color: var(--ink);
+    border-color: var(--gold);
+    box-shadow: none
+}
+
+.gold:hover {
+    background: #f1dfae
+}
+
+.step {
+    border-top: 1px solid #ffffff30;
+    padding-top: 20px
+}
+
+.step>span {
+    font: 28px Georgia,serif;
+    color: var(--gold)
+}
+
+.step h3 {
+    font-size: 19px;
+    margin: 24px 0 15px
+}
+
+.step p {
+    font-size: 12px;
+    color: #ead7df
+}
+
+.page-main {
+    padding-top: 60px;
+    padding-bottom: 65px
+}
+
+.page-title {
+    font-size: 54px;
+    letter-spacing: -1.5px;
+    margin-bottom: 24px
+}
+
+.back {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 30px
+}
+
+.detail {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr
+}
+
+.detail-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    min-height: 450px
+}
+
+.detail-copy {
+    padding: 38px
+}
+
+.badge.static {
+    position: static;
+    display: inline-block;
+    margin-bottom: 22px
+}
+
+.detail-copy .page-title {
+    font-size: 43px
+}
+
+.detail-copy p {
+    color: var(--muted)
+}
+
+dl {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 10px;
+    font-size: 13px;
+    margin: 25px 0 30px
+}
+
+dt {
+    font-weight: bold
+}
+
+dd {
+    margin: 0;
+    color: var(--muted)
+}
+
+.small-title {
+    font-size: 25px
+}
+
+.return-box {
+    border-top: 1px solid var(--line);
+    padding-top: 24px;
+    margin-top: 28px
+}
+
+.form-layout {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 65px
+}
+
+.form-art {
+    max-width: 280px;
+    border-radius: 170px 170px 20px 20px;
+    margin-top: 32px
 }
 
 form {
-    padding: 28px;
-    border: 1px solid #ddd2d2;
-    border-radius: 10px;
-    background-color: white;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: 32px;
+    box-shadow: 0 12px 35px #4b112706
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 20px
 }
 
 label {
     display: block;
-    margin-bottom: 7px;
+    font-size: 12px;
     font-weight: bold;
+    margin-bottom: 8px
 }
 
-input,
-select,
-textarea {
+input,select,textarea {
     width: 100%;
     min-width: 0;
-    padding: 11px 12px;
-    border: 1px solid #a99b9d;
-    border-radius: 5px;
-    background-color: white;
-    color: #292323;
-    font: inherit;
+    padding: 12px 14px;
+    border: 1px solid #78193630;
+    border-radius: 10px;
+    background: white;
+    color: #332427;
+    font: 14px Arial,sans-serif
 }
 
 textarea {
-    resize: vertical;
+    resize: vertical
 }
 
-input[type="file"] {
-    padding: 10px;
+input[type=file] {
+    font-size: 12px
 }
 
-input[type="file"]::file-selector-button {
-    margin-right: 12px;
-    padding: 7px 12px;
-    border: 1px solid #a99b9d;
-    border-radius: 4px;
-    background-color: #f6f3f3;
-    color: #292323;
-    cursor: pointer;
-}
-
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-    outline: 3px solid #b18435;
-    outline-offset: 3px;
-}
-
-.campus-photo {
-    display: block;
-    width: 100%;
-    max-width: 700px;
-    height: auto;
-    margin: 20px auto;
-    border-radius: 10px;
+button[type=submit] {
+    background: var(--garnet);
+    color: white;
+    border: 0;
+    border-radius: 999px;
+    padding: 13px 24px;
+    font-weight: bold;
+    cursor: pointer
 }
 
 footer {
-    padding: 28px 20px;
-    color: #675b5d;
-    text-align: center;
+    border-top: 1px solid var(--line);
+    padding: 24px 32px;
+    color: var(--muted);
+    font-size: 11px
 }
 
 footer p {
-    margin: 0;
+    max-width: 1096px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px
 }
 
-@media (max-width: 700px) {
-    .cards {
-        grid-template-columns: 1fr;
+::selection {
+    background: var(--garnet);
+    color: white
+}
+
+@media(max-width:900px) {
+    .header-inner {
+        flex-wrap: wrap;
+        padding-top: 20px;
+        padding-bottom: 20px
+    }
+
+    .header-actions {
+        margin-left: auto
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        justify-content: center
     }
 
     .hero {
-        padding: 30px 20px;
+        gap: 25px
     }
 
-    form {
-        padding: 20px;
+    .hero h1 {
+        letter-spacing: -2px
+    }
+
+    .arch {
+        border-width: 15px
+    }
+
+    .arch img {
+        height: 290px
+    }
+
+    .how-inner {
+        grid-template-columns: 1fr 1fr
+    }
+
+    .form-layout {
+        gap: 30px
+    }
+
+    .detail {
+        grid-template-columns: 1fr
+    }
+
+    .detail-image {
+        min-height: 0;
+        max-height: 360px
+    }
+
+    .item-grid {
+        gap: 15px
+    }
+
+    .card-copy {
+        padding: 18px
+    }
+
+}
+
+@media(max-width:600px) {
+    .wrap,.header-inner,.how-inner {
+        padding-left: 20px;
+        padding-right: 20px
+    }
+
+    .header-actions {
+        gap: 7px
+    }
+
+    .header-actions a {
+        padding: 9px 12px;
+        font-size: 11px
+    }
+
+    .brand {
+        font-size: 19px
+    }
+
+    .brand-mark {
+        width: 32px;
+        height: 32px
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 40px;
+        padding-bottom: 50px;
+        gap: 40px
+    }
+
+    .hero h1 {
+        font-size: 55px
+    }
+
+    .hero-visual {
+        max-width: 380px;
+        margin: auto;
+        width: 100%
+    }
+
+    .hero-tag {
+        left: 0;
+        padding: 15px
+    }
+
+    .item-grid,.form-layout {
+        grid-template-columns: 1fr
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column
     }
 
     h2 {
-        font-size: 26px;
+        font-size: 34px
     }
+
+    .page-title {
+        font-size: 43px
+    }
+
+    .how-inner {
+        grid-template-columns: 1fr
+    }
+
+    .how h2 {
+        font-size: 35px
+    }
+
+    .form-art {
+        display: none
+    }
+
+    form,.detail-copy {
+        padding: 24px
+    }
+
+    .page-main {
+        padding-top: 40px
+    }
+
+    .card-copy>p: not(.eyebrow) {
+        min-height: 0
+    }
+
+    footer p {
+        flex-direction: column;
+        gap: 5px
+    }
+
+}
+
+@media(prefers-reduced-motion:reduce) {
+    html {
+        scroll-behavior: auto
+    }
+
+    * {
+        transition: none!important
+    }
+
+}
+
+.hero-aside {
+    display: block;
+    color: #a52b50;
+    font-size: clamp(24px,2.8vw,35px);
+    letter-spacing: -.5px;
+    line-height: 1.2;
+    margin-top: 20px
+}
+
+.step p {
+    margin-top: 24px
+}
+
+.btn:disabled {
+    cursor: default;
+    opacity: .75
 }
