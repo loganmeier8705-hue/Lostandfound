@@ -1,65 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<!-- Author: Logan Meier -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Report found | UofSC Lost &amp; Found</title>
-<link rel="stylesheet" href="styles.css">
-<style>.sample-note { font-size: 0.8rem; }</style>
-</head>
-<body><header class="site-header"><div class="header-inner"><a class="brand" href="index.html"><span>UofSC<span class="brand-sub">Lost &amp; Found</span></span></a><nav aria-label="Main navigation"><a  href="index.html">Home</a><a  href="items.html">Browse items</a><a  href="index.html#how-it-works">How it works</a></nav><div class="header-actions"><a class="btn-outline" href="found.html">Report found</a><a class="btn" href="lost.html">Report lost</a></div></div></header><main class="wrap page-main form-layout"><aside><h1 class="page-title">Report a<br>found item.</h1><p class="intro">Share where you found the item, a picture, and some basic tags</p></aside><div><form>
-<p class="sample-note">Note: This form doesn't actually save or send anything. I don't know how to do that yet. This is just a demo.</p>
-
-            <div class="form-group">
-                <label for="found-name">Your Name</label>
-                <input type="text" id="found-name" name="name" required>
+    <head>
+        <!-- Author: Logan Meier -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Report found | UofSC Lost &amp; Found</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="validation.js" defer></script>
+        <style>
+            .sample-note {
+                font-size: 0.8rem;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="header-inner">
+                <a class="brand" href="index.html">
+                    <span>
+                        UofSC
+                        <span class="brand-sub">Lost &amp; Found</span>
+                    </span>
+                </a>
+                <nav aria-label="Main navigation">
+                    <a href="index.html">Home</a>
+                    <a href="items.html">Browse items</a>
+                    <a href="index.html#how-it-works">How it works</a>
+                </nav>
+                <div class="header-actions">
+                    <a class="btn-outline" href="found.html">Report found</a>
+                    <a class="btn" href="lost.html">Report lost</a>
+                </div>
             </div>
+        </header>
+        <main class="wrap page-main form-layout">
+            <aside>
+                <h1 class="page-title">
+                    Report a
+                    <br />
+                    found item.
+                </h1>
+                <p class="intro">Share where you found the item, a picture, and some basic tags</p>
+            </aside>
+            <div>
+                <form data-validate>
+                    <p class="sample-note">
+                        Demo only: Entries are not saved or sent. All fields are required except
+                        tags and photo.
+                    </p>
 
-            <div class="form-group">
-                <label for="found-email">Email</label>
-                <input type="email" id="found-email" name="email" required>
+                    <div class="form-group">
+                        <label for="found-name">Your Name</label>
+                        <input type="text" id="found-name" name="name" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="found-email">Email</label>
+                        <input type="email" id="found-email" name="email" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="found-item">Item Name/Brand/Model</label>
+                        <input type="text" id="found-item" name="item" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="found-category">Category</label>
+
+                        <select id="found-category" name="category" required>
+                            <option value="">Select a category</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="keys">Keys</option>
+                            <option value="wallet">Wallet / ID</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="found-location">Location Found</label>
+                        <input type="text" id="found-location" name="location" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="found-date">Date Found</label>
+                        <input type="date" id="found-date" name="date" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="found-description">
+                            Tags for search purposes (optional, separated by commas)
+                        </label>
+                        <textarea
+                            id="found-description"
+                            name="tags"
+                            rows="3"
+                            placeholder="Airpods, Airpods Pro 2, Apple, wireless, earbuds, wireless earbuds"
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="found-photo">Upload Photo (optional, max 5 MB)</label>
+                        <input
+                            accept="image/jpeg,image/png,image/webp,image/gif"
+                            type="file"
+                            id="found-photo"
+                            name="photo"
+                        />
+                    </div>
+
+                    <button type="submit">Submit Found Item</button>
+
+                    <p
+                        id="form-status"
+                        class="form-status"
+                        role="status"
+                        aria-live="polite"
+                        hidden
+                    ></p>
+                    <noscript><p>Enable JavaScript to use this validation demo.</p></noscript>
+                </form>
             </div>
-
-            <div class="form-group">
-                <label for="found-item">Item Name/Brand/Model</label>
-                <input type="text" id="found-item" name="item" required>
-            </div>
-
-            <div class="form-group">
-                <label for="found-category">Category</label>
-
-                <select id="found-category" name="category">
-                    <option value="">Select a category</option>
-                    <option value="electronics">Electronics</option>
-                    <option value="clothing">Clothing</option>
-                    <option value="keys">Keys</option>
-                    <option value="wallet">Wallet / ID</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="found-location">Location Found</label>
-                <input type="text" id="found-location" name="location">
-            </div>
-
-            <div class="form-group">
-                <label for="found-date">Date Found</label>
-                <input type="date" id="found-date" name="date">
-            </div>
-
-            <div class="form-group">
-                <label for="found-description">Tags for search purposes (separated by commas)</label>
-                <textarea id="found-description" name="tags" rows="3" placeholder="Airpods, Airpods Pro 2, Apple, wireless, earbuds, wireless earbuds"></textarea>
-            </div>
-
-            <div class="form-group">
-                <label for="found-photo">Upload Photo</label>
-                <input accept="image/*" type="file" id="found-photo" name="photo">
-            </div>
-
-            <button type="submit">Submit Found Item</button>
-
-        </form></div></main><footer><p>&copy; 2026 UofSC Lost &amp; Found <span>Logan Meier</span></p></footer></body>
+        </main>
+        <footer>
+            <p>
+                &copy; 2026 UofSC Lost &amp; Found
+                <span>Logan Meier</span>
+            </p>
+        </footer>
+    </body>
 </html>
